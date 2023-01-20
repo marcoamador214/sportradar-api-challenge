@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CSVLink } from 'react-csv';
 
-class AsyncCsv extends Component {
+class TeamCSV extends Component {
 
     constructor(props) {
         super(props);
@@ -39,11 +39,12 @@ class AsyncCsv extends Component {
         const { data } = this.state
 
         return (
-            <div>
+            <div style={{ textAlign: 'center' }}>
                 <input
                     type='button'
-                    value = 'Export team to CSV'
+                    value = 'Export Team to CSV'
                     onClick ={this.downloadReport}
+                    style={{ cursor: 'pointer' }}
                 />
                 <CSVLink
                     headers={this.headers}
@@ -56,4 +57,4 @@ class AsyncCsv extends Component {
     }
 }
 
-export default AsyncCsv
+export default TeamCSV;

@@ -1,11 +1,14 @@
 import { CSVLink } from 'react-csv';
-import AsyncCsv from './AsyncCSV';
+import TeamCSV from './TeamCSV';
+import PlayerCSV from './PlayerCSV';
 
 function App() {
 
   return (
     <div className="App">
-      <AsyncCsv/>
+      <TeamCSV/>
+      <br></br>
+      <PlayerCSV/>
     </div>
   );
 }
