@@ -1,13 +1,11 @@
-import './App.css';
-
-import TeamPipeline from './TeamPipeline';
-import PlayerPipeline from './PlayerPipeline';
+import { CSVLink } from 'react-csv';
+import AsyncCsv from './AsyncCSV';
 
 function App() {
+
   return (
     <div className="App">
-      <TeamPipeline />
-      <PlayerPipeline />
+      <AsyncCsv/>
     </div>
   );
 }

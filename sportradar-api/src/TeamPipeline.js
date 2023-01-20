@@ -1,9 +1,13 @@
-import React from 'react';
+function TeamPipeline({ teams }) {
 
-function TeamPipeline() {
+
     return (
         <div>
-            TeamPipeline
+            {teams.teams?.map((team) => {
+                return (
+                    <h1>{team.name}</h1>
+                )
+            })}
         </div>
     )
 }
