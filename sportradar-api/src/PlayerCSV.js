@@ -39,18 +39,25 @@ class PlayerCSV extends Component {
 
         return (
             <div style={{ textAlign: 'center' }}>
-                <input
-                    type='button'
-                    value = 'Export Player to CSV'
-                    onClick ={this.downloadReport}
-                    style={{ cursor: 'pointer' }}
-                />
-                <CSVLink
-                    headers={this.headers}
-                    data={data}
-                    filename='PlayerData.csv'
-                    ref={this.csvLinkE1}
-                />
+                <form className='csvForm'>
+                    <h2>Player Pipeline</h2>
+                    <input placeholder='Enter Player ID'></input>
+                    <br></br>
+                    <input placeholder='Enter Season Year'></input>
+                    <br></br>
+                    <input
+                        type='button'
+                        value = 'Export Player to CSV'
+                        onClick ={this.downloadReport}
+                        style={{ cursor: 'pointer' }}
+                    />
+                    <CSVLink
+                        headers={this.headers}
+                        data={data}
+                        filename='PlayerData.csv'
+                        ref={this.csvLinkE1}
+                    />
+                </form>
             </div>
         )
     }

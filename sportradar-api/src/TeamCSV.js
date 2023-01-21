@@ -40,6 +40,12 @@ class TeamCSV extends Component {
 
         return (
             <div style={{ textAlign: 'center' }}>
+                <form className='csvForm'>
+                    <h2>Team Pipeline</h2>
+                <input placeholder='Enter Team ID'></input>
+                    <br></br>
+                    <input placeholder='Enter Season Year'></input>
+                    <br></br>
                 <input
                     type='button'
                     value = 'Export Team to CSV'
@@ -52,6 +58,7 @@ class TeamCSV extends Component {
                     filename='TeamData.csv'
                     ref={this.csvLinkE1}
                 />
+                </form>
             </div>
         )
     }

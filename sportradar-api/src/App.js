@@ -6,6 +6,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1 style={{ textAlign: 'center' }}>NHL ETL Pipeline</h1>
       <TeamCSV/>
       <br></br>
       <PlayerCSV/>
