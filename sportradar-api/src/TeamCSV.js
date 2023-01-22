@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { CSVLink } from 'react-csv';
 
 class TeamCSV extends Component {
@@ -21,8 +21,8 @@ class TeamCSV extends Component {
         ]
     }
 
-    getTeamList = () => {
-        return fetch('https://statsapi.web.nhl.com/api/v1/teams/1?expand=team.stats')
+    getTeamList = (id) => {
+        return fetch(`https://statsapi.web.nhl.com/api/v1/teams/1?expand=team.stats`)
         .then((r) => r.json())
     }
 
@@ -35,6 +35,15 @@ class TeamCSV extends Component {
         });
     }
 
+    handleIdChange = (e) => {
+        console.log(e.target.value)
+    }
+
+    handleSeasonChange = (e) => {
+        console.log(e.target.value)
+    }
+
+
     render() {
         const { data } = this.state
 
@@ -42,22 +51,26 @@ class TeamCSV extends Component {
             <div style={{ textAlign: 'center' }}>
                 <form className='csvForm'>
                     <h2>Team Pipeline</h2>
-                <input placeholder='Enter Team ID'></input>
+                    <input 
+                        placeholder='Enter Team ID' 
+                        onChange={this.handleIdChange}
+                        value={data.id}
+                    />
                     <br></br>
-                    <input placeholder='Enter Season Year'></input>
+                    <input placeholder='Enter Season Year' onChange={this.handleSeasonChange}></input>
                     <br></br>
-                <input
-                    type='button'
-                    value = 'Export Team to CSV'
-                    onClick ={this.downloadReport}
-                    style={{ cursor: 'pointer' }}
-                />
-                <CSVLink
-                    headers={this.headers}
-                    data={data}
-                    filename='TeamData.csv'
-                    ref={this.csvLinkE1}
-                />
+                    <input
+                        type='button'
+                        value = 'Export Team to CSV'
+                        onClick ={this.downloadReport}
+                        style={{ cursor: 'pointer' }}
+                    />
+                    <CSVLink
+                        headers={this.headers}
+                        data={data}
+                        filename='TeamData.csv'
+                        ref={this.csvLinkE1}
+                    />
                 </form>
             </div>
         )

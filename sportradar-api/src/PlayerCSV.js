@@ -41,7 +41,7 @@ class PlayerCSV extends Component {
             <div style={{ textAlign: 'center' }}>
                 <form className='csvForm'>
                     <h2>Player Pipeline</h2>
-                    <input placeholder='Enter Player ID'></input>
+                    <input placeholder='Enter Player ID' ></input>
                     <br></br>
                     <input placeholder='Enter Season Year'></input>
                     <br></br>
