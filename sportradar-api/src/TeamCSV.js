@@ -1,7 +1,9 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useRef, useState } from 'react';
 import { CSVLink } from 'react-csv';
 
 class TeamCSV extends Component {
+
+    idRef = React.createRef();
 
     constructor(props) {
         super(props);
@@ -21,8 +23,8 @@ class TeamCSV extends Component {
         ]
     }
 
-    getTeamList = (id) => {
-        return fetch(`https://statsapi.web.nhl.com/api/v1/teams/1?expand=team.stats`)
+    getTeamList = () => {
+        return fetch(`https://statsapi.web.nhl.com/api/v1/teams/${this.idRef.current.value}?expand=team.stats`)
         .then((r) => r.json())
     }
 
@@ -54,10 +56,15 @@ class TeamCSV extends Component {
                     <input 
                         placeholder='Enter Team ID' 
                         onChange={this.handleIdChange}
-                        value={data.id}
+                        type='number'
+                        ref={this.idRef}
                     />
                     <br></br>
-                    <input placeholder='Enter Season Year' onChange={this.handleSeasonChange}></input>
+                    <input 
+                        placeholder='Enter Season Year' 
+                        onChange={this.handleSeasonChange} 
+                        type='number'
+                    />
                     <br></br>
                     <input
                         type='button'
