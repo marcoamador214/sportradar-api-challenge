@@ -1,4 +1,3 @@
-import { CSVLink } from 'react-csv';
 import TeamCSV from './TeamCSV';
 import PlayerCSV from './PlayerCSV';
 

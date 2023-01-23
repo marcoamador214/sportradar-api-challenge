@@ -3,6 +3,8 @@ import { CSVLink } from 'react-csv';
 
 class PlayerCSV extends Component {
 
+    idRef = React.createRef();
+
     constructor(props) {
         super(props);
         this.state = {
@@ -21,7 +23,7 @@ class PlayerCSV extends Component {
     }
 
     getPlayerList = () => {
-        return fetch('https://statsapi.web.nhl.com/api/v1/people/8475151')
+        return fetch(`https://statsapi.web.nhl.com/api/v1/people/${this.idRef.current.value}`)
         .then((r) => r.json())
     }
 
@@ -34,6 +36,10 @@ class PlayerCSV extends Component {
         });
     }
 
+    handleChange = (e) => {
+        console.log(e.target.value)
+    }
+
     render() {
         const { data } = this.state
 
@@ -41,7 +47,12 @@ class PlayerCSV extends Component {
             <div style={{ textAlign: 'center' }}>
                 <form className='csvForm'>
                     <h2>Player Pipeline</h2>
-                    <input placeholder='Enter Player ID' ></input>
+                    <input 
+                        placeholder='Enter Player ID' 
+                        onChange={this.handleChange}
+                        type='number'
+                        ref={this.idRef}
+                    />
                     <br></br>
                     <input placeholder='Enter Season Year'></input>
                     <br></br>
