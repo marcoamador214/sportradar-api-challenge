@@ -1,4 +1,4 @@
-import React, { Component, useRef, useState } from 'react';
+import React, { Component } from 'react';
 import { CSVLink } from 'react-csv';
 
 class TeamCSV extends Component {

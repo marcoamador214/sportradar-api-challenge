@@ -54,10 +54,10 @@ class PlayerCSV extends Component {
                         ref={this.idRef}
                     />
                     <br></br>
-                    <input 
+                    {/* <input 
                         placeholder='Enter Season Year'
                         onChange={this.handleChange}
-                    />
+                    /> */}
                     <br></br>
                     <input
                         type='button'
