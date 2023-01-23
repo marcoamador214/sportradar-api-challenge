@@ -4,6 +4,7 @@ import { CSVLink } from 'react-csv';
 class TeamCSV extends Component {
 
     idRef = React.createRef();
+    seasonRef = React.createRef();
 
     constructor(props) {
         super(props);
@@ -24,7 +25,7 @@ class TeamCSV extends Component {
     }
 
     getTeamList = () => {
-        return fetch(`https://statsapi.web.nhl.com/api/v1/teams/${this.idRef.current.value}?expand=team.stats`)
+        return fetch(`https://statsapi.web.nhl.com/api/v1/teams/${this.idRef.current.value}?expand=team.stats&season=${this.seasonRef.current.value}`)
         .then((r) => r.json())
     }
 
@@ -64,6 +65,7 @@ class TeamCSV extends Component {
                         placeholder='Enter Season Year' 
                         onChange={this.handleSeasonChange} 
                         type='number'
+                        ref={this.seasonRef}
                     />
                     <br></br>
                     <input
