@@ -2,7 +2,7 @@
 
 Instructions for running locally:
 1. Clone using: `git clone git@github.com:marcoamador214/sportradar-api-challenge.git`
-2. Once opened, change directory into the 'sportradar-api' folder: `cd sportradar-api`
+2. Once opened, change directory into the 'sportradar-api' folder: `cd sportradar-api`, may need to run `npm install`
 3. Run `npm start` to open in browser
 
 * **Team Pipeline** - Was able to output a CSV file using the 'Team Pipeline' form with a given ID and Season Year containing the following:
