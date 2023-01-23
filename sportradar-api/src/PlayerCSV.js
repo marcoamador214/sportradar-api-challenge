@@ -54,13 +54,17 @@ class PlayerCSV extends Component {
                         ref={this.idRef}
                     />
                     <br></br>
-                    <input placeholder='Enter Season Year'></input>
+                    <input 
+                        placeholder='Enter Season Year'
+                        onChange={this.handleChange}
+                    />
                     <br></br>
                     <input
                         type='button'
                         value = 'Export Player to CSV'
                         onClick ={this.downloadReport}
                         style={{ cursor: 'pointer' }}
+                        className='btn'
                     />
                     <CSVLink
                         headers={this.headers}

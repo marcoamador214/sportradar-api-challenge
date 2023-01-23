@@ -38,11 +38,7 @@ class TeamCSV extends Component {
         });
     }
 
-    handleIdChange = (e) => {
-        console.log(e.target.value)
-    }
-
-    handleSeasonChange = (e) => {
+    handleChange = (e) => {
         console.log(e.target.value)
     }
 
@@ -56,14 +52,14 @@ class TeamCSV extends Component {
                     <h2>Team Pipeline</h2>
                     <input 
                         placeholder='Enter Team ID' 
-                        onChange={this.handleIdChange}
+                        onChange={this.handleChange}
                         type='number'
                         ref={this.idRef}
                     />
                     <br></br>
                     <input 
                         placeholder='Enter Season Year (ex: 20152016)' 
-                        onChange={this.handleSeasonChange} 
+                        onChange={this.handleChange} 
                         type='number'
                         ref={this.seasonRef}
                     />
