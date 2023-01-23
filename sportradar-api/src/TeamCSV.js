@@ -62,7 +62,7 @@ class TeamCSV extends Component {
                     />
                     <br></br>
                     <input 
-                        placeholder='Enter Season Year' 
+                        placeholder='Enter Season Year (ex: 20152016)' 
                         onChange={this.handleSeasonChange} 
                         type='number'
                         ref={this.seasonRef}
@@ -73,6 +73,7 @@ class TeamCSV extends Component {
                         value = 'Export Team to CSV'
                         onClick ={this.downloadReport}
                         style={{ cursor: 'pointer' }}
+                        className='btn'
                     />
                     <CSVLink
                         headers={this.headers}
