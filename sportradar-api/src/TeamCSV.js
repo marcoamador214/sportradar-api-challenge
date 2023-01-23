@@ -51,7 +51,7 @@ class TeamCSV extends Component {
                 <form className='csvForm'>
                     <h2>Team Pipeline</h2>
                     <input 
-                        placeholder='Enter Team ID' 
+                        placeholder='Enter Team ID (ex: 2)' 
                         onChange={this.handleChange}
                         type='number'
                         ref={this.idRef}

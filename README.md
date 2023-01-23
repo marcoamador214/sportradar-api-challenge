@@ -28,6 +28,8 @@ Instructions for running locally:
   
   Was unable to locate a URL endpoint which contained the appropriate general player information (id, name, team, age, etc.) with appended statistics within the API; the `/people/ID/stats` endpoint contained only general info, while the `?stats=statsSingleSeason&season=20182019` modifier only contained statistics without the aforementioned information.
 
+  Had I been able to locate the correct endpoints, I would have been able to employ the same interpolation/technique for the requested player as with the teams above.
+
 
 
 

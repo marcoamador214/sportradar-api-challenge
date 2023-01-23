@@ -4,6 +4,7 @@ import { CSVLink } from 'react-csv';
 class PlayerCSV extends Component {
 
     idRef = React.createRef();
+    seasonRef = React.createRef();
 
     constructor(props) {
         super(props);
@@ -48,7 +49,7 @@ class PlayerCSV extends Component {
                 <form className='csvForm'>
                     <h2>Player Pipeline</h2>
                     <input 
-                        placeholder='Enter Player ID' 
+                        placeholder='Enter Player ID (ex: 8475151)' 
                         onChange={this.handleChange}
                         type='number'
                         ref={this.idRef}
